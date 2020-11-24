@@ -31,6 +31,13 @@ services:
       KAFKA_NUM_PARTITIONS: 1
     networks:
       - kafkastreams-network
+  mongodb-employee-profile:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: root
+    networks:
+      - kafkastreams-network
   vacation-producer:
     image: rrojas/vacation-producer:0.1
     build:
@@ -54,6 +61,20 @@ services:
     depends_on:
       - zookeeper
       - kafka
+    networks:
+      - kafkastreams-network
+  employee-profile:
+    image: rrojas/employee-profile:0.1
+    build:
+      context: kafka-employee-profile-service
+      dockerfile: src/main/docker/Dockerfile.jvm
+    environment:
+      QUARKUS_KAFKA_STREAMS_BOOTSTRAP_SERVERS: kafka:9092
+      QUARKUS_MONGODB_CONNECTION_STRING: mongodb://admin:root@mongodb-employee-profile:27017
+    depends_on:
+      - zookeeper
+      - kafka
+      - mongodb-employee-profile
     networks:
       - kafkastreams-network
 networks:

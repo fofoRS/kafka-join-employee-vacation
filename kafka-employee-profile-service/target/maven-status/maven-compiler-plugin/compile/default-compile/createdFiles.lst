@@ -1,0 +1,10 @@
+org/kafka/join/demo/model/VacationRequestResult.class
+org/kafka/join/demo/connector/MongoDbSinkImplementor.class
+org/kafka/join/demo/VacationResultEventHandler.class
+org/kafka/join/demo/annotations/MongoSink.class
+org/kafka/join/demo/connector/DataStreamSink.class
+org/kafka/join/demo/model/DataStreamRecord.class
+META-INF/panache-archive.marker
+org/kafka/join/demo/annotations/InMemorySink.class
+org/kafka/join/demo/connector/PrintDataSinkImplementor.class
+org/kafka/join/demo/model/EmployeeVacationInformation.class

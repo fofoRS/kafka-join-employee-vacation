@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/kafka-employee-vacation-request/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-vacation-enricher/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-employee-profile-service/pom.xml" />
       </list>
     </option>
   </component>

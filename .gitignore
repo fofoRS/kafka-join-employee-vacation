@@ -39,3 +39,6 @@ nb-configuration.xml
 /../target/
 /**/*.iml
 
+/**/.idea/
+/**/target/
+
